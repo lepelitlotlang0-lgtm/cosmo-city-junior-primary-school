@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ERP Dashboard</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <script defer src="firebase.js"></script>
+  <script defer src="dashboard.js"></script>
+
+  <style>
+    body { font-family: Arial; margin:0; display:flex; }
+
+    .sidebar {
+      width: 220px;
+      background: #0d47a1;
+      color: white;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+      background: #f4f6f9;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h3>School ERP</h3>
+    <button onclick="loadStudents()">Students</button>
+    <button onclick="loadAttendance()">Attendance</button>
+    <button onclick="loadGrades()">Grades</button>
+    <button onclick="loadAnnouncements()">Announcements</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="main">
+    <h2>Dashboard</h2>
+    <div id="content"></div>
+  </div>
+
+</body>
+</html>
